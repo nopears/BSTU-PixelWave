@@ -30,6 +30,7 @@ body {
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  font-size: 16px;
 }
 
 /* Remove list styles on ul, ol elements with a class attribute */
@@ -71,6 +72,90 @@ select {
 }
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #2C3333;
+}
+
+.home {
+  width: 100vw;
+  height: 62rem;
+  background-image: url("./assets/jpg/background.jpg");
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0 4.375rem;
+}
+.home .content {
+  position: relative;
+  z-index: 10;
+}
+.home .content header {
+  height: 7.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.home .content header .title {
+  font-size: 2rem;
+  color: #CBE4DE;
+  font-weight: bold;
+}
+.home .content header .subtitle {
+  font-size: 1.25rem;
+  color: #fff;
+  font-weight: 400;
+}
+.home .content header a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 1rem 1.6875rem;
+}
+.home .content .vision {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.home .content .vision .vision_wrapper {
+  margin-top: 8.5rem;
+  max-width: 36.4375rem;
+  color: #fff;
+  text-align: right;
+}
+.home .content .vision .vision_wrapper .title {
+  font-weight: bold;
+  font-size: 4rem;
+  line-height: 100%;
+  margin-bottom: 1.1875rem;
+}
+.home .content .vision .vision_wrapper .subtitle {
+  font-size: 1.75rem;
+  margin-bottom: 1.1875rem;
+}
+.home .content .vision .vision_wrapper .button {
+  background-color: #CBE4DE;
+  display: inline-block;
+  color: #2C3333;
+  font-size: 1.75rem;
+  font-weight: bold;
+  padding: 1.25rem 1.5625rem;
+  border-radius: 0.9375rem;
+  text-decoration: none;
+}
+.home .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #2C3333;
+  opacity: 55%;
 }
 
 /*# sourceMappingURL=style.css.map */
