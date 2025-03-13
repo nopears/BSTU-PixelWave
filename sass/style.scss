@@ -67,6 +67,8 @@ body {
 
         .title {
           @include title;
+          color: #fff;
+          text-align: right;
           line-height: 4.75rem;
           margin-bottom: 1.1875rem;
         }
@@ -103,13 +105,10 @@ body {
 }
 
 .why-us {
-  padding: 4.6875rem 4.375rem 0 4.375rem;
+  @include section;
 
   .title {
     @include title;
-    color: $text;
-    margin-bottom: 2.8125rem;
-    text-align: center;
   }
 
   ul {
@@ -137,13 +136,10 @@ body {
 }
 
 .products {
-  padding: 4.6875rem 4.375rem 0 4.375rem;
+  @include section;
 
   .title {
     @include title;
-    text-align: center;
-    color: $text;
-    margin-bottom: 2.875rem;
   }
 
   .product-list {
@@ -178,13 +174,10 @@ body {
 }
 
 .pictures {
-  padding: 4.6875rem 4.375rem 0 4.375rem;
+  @include section;
 
   .title {
     @include title;
-    text-align: center;
-    color: $text;
-    margin-bottom: 2.875rem;
   }
 
   menu {

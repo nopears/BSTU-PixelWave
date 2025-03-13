@@ -1,4 +1,13 @@
+@use "./variables" as *;
+
 @mixin title {
   font-weight: bold;
   font-size: 4rem;
+  text-align: center;
+  color: $text;
+  margin-bottom: 2.875rem;
+}
+
+@mixin section {
+  padding: 4.6875rem 4.375rem 0 4.375rem;
 }

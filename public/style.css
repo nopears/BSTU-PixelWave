@@ -134,6 +134,11 @@ body {
 .home .content .vision .vision_wrapper .title {
   font-weight: bold;
   font-size: 4rem;
+  text-align: center;
+  color: #CBE4DE;
+  margin-bottom: 2.875rem;
+  color: #fff;
+  text-align: right;
   line-height: 4.75rem;
   margin-bottom: 1.1875rem;
 }
@@ -168,9 +173,9 @@ body {
 .why-us .title {
   font-weight: bold;
   font-size: 4rem;
-  color: #CBE4DE;
-  margin-bottom: 2.8125rem;
   text-align: center;
+  color: #CBE4DE;
+  margin-bottom: 2.875rem;
 }
 .why-us ul {
   border-left: 0.3125rem solid #CBE4DE;
