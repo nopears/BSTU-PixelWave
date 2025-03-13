@@ -131,12 +131,13 @@ body {
 .home .content .vision .vision_wrapper .title {
   font-weight: bold;
   font-size: 4rem;
-  line-height: 100%;
+  line-height: 4.75rem;
   margin-bottom: 1.1875rem;
 }
 .home .content .vision .vision_wrapper .subtitle {
   font-size: 1.75rem;
   margin-bottom: 1.1875rem;
+  line-height: 2.0625rem;
 }
 .home .content .vision .vision_wrapper .button {
   background-color: #CBE4DE;
@@ -156,6 +157,33 @@ body {
   height: 100%;
   background-color: #2C3333;
   opacity: 55%;
+}
+
+.why-us .title {
+  font-weight: bold;
+  font-size: 4rem;
+  color: #CBE4DE;
+  margin: 4.6875rem 0 2.8125rem 0;
+  text-align: center;
+}
+.why-us ul {
+  border-left: 0.3125rem solid #CBE4DE;
+  color: #CBE4DE;
+  padding-left: 4.375rem;
+  list-style: none;
+  max-width: 56.75rem;
+  margin: auto;
+}
+.why-us ul li {
+  margin-bottom: 2.5625rem;
+}
+.why-us ul li .label {
+  font-size: 3rem;
+  line-height: 3.5625rem;
+}
+.why-us ul li .description {
+  font-size: 2rem;
+  line-height: 2.375rem;
 }
 
 /*# sourceMappingURL=style.css.map */

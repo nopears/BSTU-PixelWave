@@ -4,85 +4,130 @@
 @use "abstracts/mixins" as *;
 
 body {
-    width: 100vw;
-    height: 100vh;
-    background-color: $dark-bg;
+  width: 100vw;
+  height: 100vh;
+  background-color: $dark-bg;
 }
 
 .home {
-    width: 100vw;
-    height: 62rem;
-    background-image: url("./assets/jpg/background.jpg");
+  width: 100vw;
+  height: 62rem;
+  background-image: url("./assets/jpg/background.jpg");
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0 4.375rem;
+
+  .content {
     position: relative;
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding: 0 4.375rem;
-    .content {
-        position: relative;
-        z-index: 10;
-        header {
-            height: 7.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 1rem;
-            .title {
-                font-size: 2rem;
-                color: $text;
-                font-weight: bold;
-            }
-            .subtitle {
-                font-size: 1.25rem;
-                color: #fff;
-                font-weight: 400;
-            }
-            a {
-                text-decoration: none;
-                color: #fff;
-                font-size: 1.5rem;
-                cursor: pointer;
-                padding: 1rem 1.6875rem;
-            }
-        }
-        .vision {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            .vision_wrapper {
-                margin-top: 8.5rem;
-                max-width: 36.4375rem;
-                color: #fff;
-                text-align: right;
-                .title {
-                    @include title;
-                    line-height: 100%;
-                    margin-bottom: 1.1875rem;
-                }
-                .subtitle {
-                    font-size: 1.75rem;
-                    margin-bottom: 1.1875rem;
-                }
-                .button {
-                    background-color: $text;
-                    display: inline-block;
-                    color: $dark-bg;
-                    font-size: 1.75rem;
-                    font-weight: bold;
-                    padding: 1.25rem 1.5625rem;
-                    border-radius: 0.9375rem;
-                    text-decoration: none;
-                }
-            }
-        }
+    z-index: 10;
+
+    header {
+      height: 7.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+
+      .title {
+        font-size: 2rem;
+        color: $text;
+        font-weight: bold;
+      }
+
+      .subtitle {
+        font-size: 1.25rem;
+        color: #fff;
+        font-weight: 400;
+      }
+
+      a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 1.5rem;
+        cursor: pointer;
+        padding: 1rem 1.6875rem;
+      }
     }
 
-    .bg {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: $dark-bg;
-        opacity: 55%;
+    .vision {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+
+      .vision_wrapper {
+        margin-top: 8.5rem;
+        max-width: 36.4375rem;
+        color: #fff;
+        text-align: right;
+
+        .title {
+          @include title;
+          line-height: 4.75rem;
+          margin-bottom: 1.1875rem;
+        }
+
+        .subtitle {
+          font-size: 1.75rem;
+          margin-bottom: 1.1875rem;
+          line-height: 2.0625rem;
+        }
+
+        .button {
+          background-color: $text;
+          display: inline-block;
+          color: $dark-bg;
+          font-size: 1.75rem;
+          font-weight: bold;
+          padding: 1.25rem 1.5625rem;
+          border-radius: 0.9375rem;
+          text-decoration: none;
+        }
+      }
     }
+  }
+
+  .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $dark-bg;
+    opacity: 55%;
+  }
+}
+
+.why-us {
+  .title {
+    @include title;
+    color: $text;
+    margin: 4.6875rem 0 2.8125rem 0;
+    text-align: center;
+  }
+
+  ul {
+    border-left: 0.3125rem solid $text;
+    color: $text;
+    padding-left: 4.375rem;
+    list-style: none;
+    max-width: 56.75rem;
+    margin: auto;
+
+    li {
+      margin-bottom: 2.5625rem;
+
+      .label {
+        font-size: 3rem;
+        line-height: 3.5625rem;
+      }
+
+      .description {
+        font-size: 2rem;
+        line-height: 2.375rem;
+      }
+    }
+
+
+  }
 }
