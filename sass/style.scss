@@ -239,3 +239,53 @@ body {
     }
   }
 }
+
+.price {
+  @include section;
+
+  .title {
+    @include title;
+  }
+
+  .prices {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+
+    li {
+      width: 22.5rem;
+      height: 18.875rem;
+      border-radius: 1.875rem;
+      border: 0.1875rem solid $cyan;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding-top: 1.6875rem;
+      gap: 2rem;
+
+      .label {
+        font-size: 2rem;
+        color: $text;
+      }
+
+      .price-label {
+        font-size: 1.75rem;
+        color: $text;
+      }
+
+      .order-button {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.5rem;
+        display: flex;
+        width: 12.5rem;
+        height: 4.375rem;
+        background-color: $cyan;
+        border-radius: 0.9375rem;
+        justify-content: center;
+        align-items: center;
+
+      }
+    }
+  }
+}
