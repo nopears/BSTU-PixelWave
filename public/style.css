@@ -110,7 +110,10 @@ body {
   color: #fff;
   font-weight: 400;
 }
-.home .content header a {
+.home .content header menu {
+  padding: 0;
+}
+.home .content header menu a {
   text-decoration: none;
   color: #fff;
   font-size: 1.5rem;
@@ -223,6 +226,48 @@ body {
   font-weight: normal;
   text-align: center;
   line-height: 1.9375rem;
+}
+
+.pictures {
+  padding: 4.6875rem 4.375rem 0 4.375rem;
+}
+.pictures .title {
+  font-weight: bold;
+  font-size: 4rem;
+  text-align: center;
+  color: #CBE4DE;
+  margin-bottom: 2.875rem;
+}
+.pictures menu {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 14.5rem;
+  margin-bottom: 2.875rem;
+}
+.pictures menu a {
+  width: 15.3125rem;
+  height: 4.6875rem;
+  border: 0.3125rem solid #CBE4DE;
+  border-radius: 1.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #CBE4DE;
+  font-size: 1.75rem;
+  font-weight: semibold;
+}
+.pictures menu a:nth-child(2) {
+  background-color: #CBE4DE;
+  color: #2C3333;
+}
+.pictures .gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3.125rem;
+}
+.pictures .gallery img {
+  width: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */

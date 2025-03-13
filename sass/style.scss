@@ -41,12 +41,16 @@ body {
         font-weight: 400;
       }
 
-      a {
-        text-decoration: none;
-        color: #fff;
-        font-size: 1.5rem;
-        cursor: pointer;
-        padding: 1rem 1.6875rem;
+      menu {
+        padding: 0;
+
+        a {
+          text-decoration: none;
+          color: #fff;
+          font-size: 1.5rem;
+          cursor: pointer;
+          padding: 1rem 1.6875rem;
+        }
       }
     }
 
@@ -169,6 +173,53 @@ body {
         text-align: center;
         line-height: 1.9375rem;
       }
+    }
+  }
+}
+
+.pictures {
+  padding: 4.6875rem 4.375rem 0 4.375rem;
+
+  .title {
+    @include title;
+    text-align: center;
+    color: $text;
+    margin-bottom: 2.875rem;
+  }
+
+  menu {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 14.5rem;
+    margin-bottom: 2.875rem;
+
+    a {
+      width: 15.3125rem;
+      height: 4.6875rem;
+      border: 0.3125rem solid $text;
+      border-radius: 1.25rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      color: $text;
+      font-size: 1.75rem;
+      font-weight: semibold;
+
+      &:nth-child(2) {
+        background-color: $text;
+        color: $dark-bg;
+      }
+    }
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3.125rem;
+
+    img {
+      width: 100%;
     }
   }
 }
