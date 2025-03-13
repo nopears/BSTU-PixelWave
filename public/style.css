@@ -296,10 +296,12 @@ body {
 }
 .video .player img {
   width: 100%;
+  cursor: pointer;
 }
 
 .price {
   padding: 4.6875rem 4.375rem 0 4.375rem;
+  padding-bottom: 4.6875rem;
 }
 .price .title {
   font-weight: bold;
@@ -343,6 +345,31 @@ body {
   border-radius: 0.9375rem;
   justify-content: center;
   align-items: center;
+}
+
+.contact {
+  padding: 4.6875rem 4.375rem 0 4.375rem;
+  height: 41.25rem;
+  background-image: url("./assets/jpg/contact.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.contact .title {
+  font-weight: bold;
+  font-size: 4rem;
+  text-align: center;
+  color: #CBE4DE;
+  margin-bottom: 2.875rem;
+}
+.contact .wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+.contact .wrapper form {
+  width: 37.5rem;
+  height: 21.6875rem;
+  background-color: #0E8388;
+  border-radius: 1.875rem;
 }
 
 /*# sourceMappingURL=style.css.map */
