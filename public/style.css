@@ -275,4 +275,27 @@ body {
   width: 100%;
 }
 
+.video {
+  padding: 4.6875rem 4.375rem 0 4.375rem;
+}
+.video .title {
+  font-weight: bold;
+  font-size: 4rem;
+  text-align: center;
+  color: #CBE4DE;
+  margin-bottom: 2.875rem;
+}
+.video .player {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.video .player .overlay {
+  position: absolute;
+  z-index: 2;
+}
+.video .player img {
+  width: 100%;
+}
+
 /*# sourceMappingURL=style.css.map */

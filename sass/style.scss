@@ -216,3 +216,26 @@ body {
     }
   }
 }
+
+.video {
+  @include section;
+
+  .title {
+    @include title;
+  }
+
+  .player {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .overlay {
+      position: absolute;
+      z-index: 2;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}
