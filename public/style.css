@@ -159,11 +159,14 @@ body {
   opacity: 55%;
 }
 
+.why-us {
+  padding: 4.6875rem 4.375rem 0 4.375rem;
+}
 .why-us .title {
   font-weight: bold;
   font-size: 4rem;
   color: #CBE4DE;
-  margin: 4.6875rem 0 2.8125rem 0;
+  margin-bottom: 2.8125rem;
   text-align: center;
 }
 .why-us ul {
@@ -184,6 +187,42 @@ body {
 .why-us ul li .description {
   font-size: 2rem;
   line-height: 2.375rem;
+}
+
+.products {
+  padding: 4.6875rem 4.375rem 0 4.375rem;
+}
+.products .title {
+  font-weight: bold;
+  font-size: 4rem;
+  text-align: center;
+  color: #CBE4DE;
+  margin-bottom: 2.875rem;
+}
+.products .product-list {
+  display: flex;
+  justify-content: space-between;
+}
+.products .product-list li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #CBE4DE;
+}
+.products .product-list li img {
+  margin-bottom: 1.25rem;
+}
+.products .product-list li .label {
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 2.375rem;
+}
+.products .product-list li .description {
+  max-width: 13.75rem;
+  font-size: 1.625rem;
+  font-weight: normal;
+  text-align: center;
+  line-height: 1.9375rem;
 }
 
 /*# sourceMappingURL=style.css.map */

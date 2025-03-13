@@ -99,10 +99,12 @@ body {
 }
 
 .why-us {
+  padding: 4.6875rem 4.375rem 0 4.375rem;
+
   .title {
     @include title;
     color: $text;
-    margin: 4.6875rem 0 2.8125rem 0;
+    margin-bottom: 2.8125rem;
     text-align: center;
   }
 
@@ -127,7 +129,46 @@ body {
         line-height: 2.375rem;
       }
     }
+  }
+}
 
+.products {
+  padding: 4.6875rem 4.375rem 0 4.375rem;
 
+  .title {
+    @include title;
+    text-align: center;
+    color: $text;
+    margin-bottom: 2.875rem;
+  }
+
+  .product-list {
+    display: flex;
+    justify-content: space-between;
+
+    li {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: $text;
+
+      img {
+        margin-bottom: 1.25rem;
+      }
+
+      .label {
+        font-size: 2rem;
+        font-weight: bold;
+        line-height: 2.375rem;
+      }
+
+      .description {
+        max-width: 13.75rem;
+        font-size: 1.625rem;
+        font-weight: normal;
+        text-align: center;
+        line-height: 1.9375rem;
+      }
+    }
   }
 }
