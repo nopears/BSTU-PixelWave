@@ -398,6 +398,32 @@ body {
   padding: 0.625rem 2.625rem;
   font-size: 1.25rem;
   border-radius: 0.9375rem;
+  cursor: pointer;
+}
+
+footer {
+  height: 7.5rem;
+  background-color: #2E4F4F;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4.375rem 0 4.375rem;
+  color: #CBE4DE;
+  font-size: 1.25rem;
+}
+footer a {
+  text-decoration: none;
+}
+footer .contacts a {
+  color: #CBE4DE;
+  display: block;
+}
+footer .contacts a:hover {
+  color: #0E8388;
+}
+footer .links {
+  display: flex;
+  gap: 1rem;
 }
 
 /*# sourceMappingURL=style.css.map */
