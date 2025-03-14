@@ -140,15 +140,17 @@ body {
   text-align: center;
   color: #CBE4DE;
   margin-bottom: 2.875rem;
-  color: #fff;
-  text-align: right;
-  line-height: 4.75rem;
-  margin-bottom: 1.1875rem;
 }
 @media (max-width: 1229px) {
   .home .content .vision .vision_wrapper .title {
     font-size: 3.75rem;
   }
+}
+.home .content .vision .vision_wrapper .title {
+  color: #fff;
+  text-align: right;
+  line-height: 4.75rem;
+  margin-bottom: 1.1875rem;
 }
 .home .content .vision .vision_wrapper .subtitle {
   font-size: 1.75rem;
@@ -390,12 +392,14 @@ body {
 
 .price {
   padding: 4.6875rem 4.375rem 0 4.375rem;
-  padding-bottom: 4.6875rem;
 }
 @media (max-width: 1229px) {
   .price {
     padding: 3.4375rem 3.125rem 0 3.125rem;
   }
+}
+.price {
+  padding-bottom: 4.6875rem;
 }
 .price .title {
   font-weight: bold;
@@ -462,15 +466,17 @@ body {
 
 .contact {
   padding: 4.6875rem 4.375rem 0 4.375rem;
-  height: 41.25rem;
-  background-image: url("./assets/jpg/contact.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 @media (max-width: 1229px) {
   .contact {
     padding: 3.4375rem 3.125rem 0 3.125rem;
   }
+}
+.contact {
+  height: 41.25rem;
+  background-image: url("./assets/jpg/contact.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .contact .title {
   font-weight: bold;

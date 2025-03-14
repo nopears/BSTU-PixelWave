@@ -70,10 +70,14 @@ body {
 
         .title {
           @include title;
-          color: #fff;
-          text-align: right;
-          line-height: 4.75rem;
-          margin-bottom: 1.1875rem;
+
+          & {
+            color: #fff;
+            text-align: right;
+            line-height: 4.75rem;
+            margin-bottom: 1.1875rem;
+
+          }
         }
 
         .subtitle {
@@ -284,7 +288,11 @@ body {
 
 .price {
   @include section;
-  padding-bottom: 4.6875rem;
+
+  & {
+
+    padding-bottom: 4.6875rem;
+  }
 
   .title {
     @include title;
@@ -357,10 +365,14 @@ body {
 
 .contact {
   @include section;
-  height: 41.25rem;
-  background-image: url("./assets/jpg/contact.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+
+  & {
+    height: 41.25rem;
+    background-image: url("./assets/jpg/contact.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+  }
 
   .title {
     @include title;
