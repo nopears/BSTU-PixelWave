@@ -4,13 +4,11 @@
 @use "abstracts/mixins" as *;
 
 body {
-  width: 100vw;
-  height: 100vh;
+  max-width: 100vw;
   background-color: $dark-bg;
 }
 
 .home {
-  width: 100vw;
   height: 62rem;
   background-image: url("./assets/jpg/background.jpg");
   position: relative;
@@ -312,6 +310,40 @@ body {
       height: 21.6875rem;
       background-color: $cyan;
       border-radius: 1.875rem;
+      padding: 2.75rem 4.8125rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+
+      .inputs {
+        display: flex;
+        flex-direction: column;
+        gap: 3.5rem;
+        margin-bottom: 1.3125rem;
+        width: 100%;
+
+        input {
+          color: #fff;
+          background-color: $cyan;
+          border: 0;
+          border-bottom: 0.1875rem solid $text;
+          outline: 0;
+          font-size: 1.25rem;
+
+          &::placeholder {
+            color: #fff;
+          }
+        }
+      }
+
+      button {
+        color: $text;
+        background-color: $cyan;
+        border: 0.1875rem solid $text;
+        padding: 0.625rem 2.625rem;
+        font-size: 1.25rem;
+        border-radius: 0.9375rem;
+      }
     }
   }
 }

@@ -75,13 +75,11 @@ body {
 }
 
 body {
-  width: 100vw;
-  height: 100vh;
+  max-width: 100vw;
   background-color: #2C3333;
 }
 
 .home {
-  width: 100vw;
   height: 62rem;
   background-image: url("./assets/jpg/background.jpg");
   position: relative;
@@ -370,6 +368,36 @@ body {
   height: 21.6875rem;
   background-color: #0E8388;
   border-radius: 1.875rem;
+  padding: 2.75rem 4.8125rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.contact .wrapper form .inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+  margin-bottom: 1.3125rem;
+  width: 100%;
+}
+.contact .wrapper form .inputs input {
+  color: #fff;
+  background-color: #0E8388;
+  border: 0;
+  border-bottom: 0.1875rem solid #CBE4DE;
+  outline: 0;
+  font-size: 1.25rem;
+}
+.contact .wrapper form .inputs input::placeholder {
+  color: #fff;
+}
+.contact .wrapper form button {
+  color: #CBE4DE;
+  background-color: #0E8388;
+  border: 0.1875rem solid #CBE4DE;
+  padding: 0.625rem 2.625rem;
+  font-size: 1.25rem;
+  border-radius: 0.9375rem;
 }
 
 /*# sourceMappingURL=style.css.map */
