@@ -19,6 +19,14 @@ body {
 
   @include tablet {
     padding: 0 3.125rem;
+    height: 59.1875rem;
+  }
+
+  @include mobile {
+    padding: 0 1rem;
+    background-size: cover;
+    height: 39.25rem;
+    background-position: bottom;
   }
 
   .content {
@@ -32,16 +40,28 @@ body {
       align-items: center;
       gap: 1rem;
 
+      @include mobile {
+        gap: 0;
+      }
+
       .title {
         font-size: 2rem;
         color: $text;
         font-weight: bold;
+
+        @include mobile {
+          font-size: 1.75rem;
+        }
       }
 
       .subtitle {
         font-size: 1.25rem;
         color: #fff;
         font-weight: 400;
+
+        @include mobile {
+          font-size: 1rem;
+        }
       }
 
       menu {
@@ -54,7 +74,23 @@ body {
           cursor: pointer;
           padding: 1rem 1.6875rem;
         }
+
+        @include mobile {
+          display: none;
+        }
       }
+
+      .burger {
+        display: none;
+
+        @include mobile {
+          display: block;
+          padding: 0.5rem;
+          border-radius: 50%;
+          background-color: $text;
+        }
+      }
+
     }
 
     .vision {
@@ -68,6 +104,10 @@ body {
         color: #fff;
         text-align: right;
 
+        @include mobile {
+          margin-top: 2.375rem;
+        }
+
         .title {
           @include title;
 
@@ -78,12 +118,22 @@ body {
             margin-bottom: 1.1875rem;
 
           }
+
+          @include mobile {
+            font-size: 2.5rem;
+            line-height: 3rem;
+            margin-bottom: 1.5625rem;
+            max-width: 14.0625rem;
+          }
         }
 
         .subtitle {
           font-size: 1.75rem;
           margin-bottom: 1.1875rem;
-          line-height: 2.0625rem;
+
+          @include mobile {
+            display: none;
+          }
         }
 
         .button {
@@ -95,6 +145,12 @@ body {
           padding: 1.25rem 1.5625rem;
           border-radius: 0.9375rem;
           text-decoration: none;
+
+          @include mobile {
+            width: 100%;
+            text-align: center;
+            font-size: 1.25rem;
+          }
         }
       }
     }
@@ -126,6 +182,10 @@ body {
     max-width: 56.75rem;
     margin: auto;
 
+    @include mobile {
+      padding: 0 0 0 1.5rem;
+    }
+
     li {
       margin-bottom: 2.5625rem;
 
@@ -137,6 +197,11 @@ body {
           font-size: 2.75rem;
           line-height: 3.3125rem;
         }
+
+        @include mobile {
+          font-size: 1.625rem;
+          line-height: 1.9375rem;
+        }
       }
 
       .description {
@@ -146,6 +211,10 @@ body {
         @include tablet {
           font-size: 1.75rem;
           line-height: 2.0625rem;
+        }
+
+        @include mobile {
+          display: none;
         }
       }
     }
@@ -163,14 +232,33 @@ body {
     display: flex;
     justify-content: space-between;
 
+    @include mobile {
+      flex-direction: column;
+      gap: 1.6875rem;
+    }
+
     li {
       display: flex;
       flex-direction: column;
       align-items: center;
       color: $text;
 
+      @include mobile {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1.1875rem 1.9375rem;
+        border: 0.0625rem solid $cyan;
+        border-radius: 1.25rem;
+      }
+
+
       img {
         margin-bottom: 1.25rem;
+
+        @include mobile {
+          width: 2rem;
+          margin: 0;
+        }
       }
 
       .label {
@@ -182,6 +270,10 @@ body {
         @include tablet {
           font-size: 1.75rem;
           line-height: 2.0625rem;
+        }
+
+        @include mobile {
+          font-size: 1.25rem;
         }
       }
 
@@ -196,6 +288,10 @@ body {
           font-size: 1.375rem;
           line-height: 1.625rem;
         }
+
+        @include mobile {
+          display: none;
+        }
       }
     }
   }
@@ -208,6 +304,13 @@ body {
     @include title;
   }
 
+  .dots {
+    color: #fff;
+    font-size: 4rem;
+    text-align: center;
+    line-height: 2rem;
+  }
+
   menu {
     display: flex;
     justify-content: space-between;
@@ -216,6 +319,10 @@ body {
 
     @include tablet {
       padding: 0 9.125rem;
+    }
+
+    @include mobile {
+      display: none;
     }
 
     a {
@@ -256,6 +363,22 @@ body {
       }
     }
 
+    @include mobile {
+      grid-template-columns: 1fr;
+
+      img:nth-child(4) {
+        display: none;
+      }
+
+      img:nth-child(3) {
+        display: none;
+      }
+
+      img:nth-child(2) {
+        display: none;
+      }
+    }
+
     img {
       width: 100%;
     }
@@ -277,6 +400,12 @@ body {
     .overlay {
       position: absolute;
       z-index: 2;
+
+      img {
+        @include mobile {
+          width: 2.25rem;
+        }
+      }
     }
 
     img {
@@ -294,6 +423,10 @@ body {
     padding-bottom: 4.6875rem;
   }
 
+  @include mobile {
+    padding-bottom: 0.9375rem;
+  }
+
   .title {
     @include title;
   }
@@ -302,6 +435,11 @@ body {
     list-style: none;
     display: flex;
     justify-content: space-between;
+
+    @include mobile {
+      flex-direction: column;
+      gap: 0.9375rem;
+    }
 
     li {
       width: 22.5rem;
@@ -314,14 +452,51 @@ body {
       padding-top: 1.6875rem;
       gap: 2rem;
 
+      @include tablet {
+        width: 17.6875rem;
+      }
+
+      @include mobile {
+        width: 100%;
+        padding: 0.9375rem 1.9375rem;
+        height: auto;
+      }
+
       .label {
         font-size: 2rem;
         color: $text;
+
+        @include tablet {
+          font-size: 1.75rem;
+        }
+
+        @include mobile {
+          font-size: 1.125rem;
+        }
+      }
+
+      .description {
+        display: none;
+        color: $text;
+        text-align: center;
+
+        @include mobile {
+          display: block;
+        }
       }
 
       .price-label {
         font-size: 1.75rem;
         color: $text;
+
+        @include tablet {
+          font-size: 1.5rem;
+        }
+
+        @include mobile {
+          font-size: 1.15rem;
+          font-weight: bold;
+        }
       }
 
       .order-button {
@@ -336,29 +511,13 @@ body {
         justify-content: center;
         align-items: center;
 
-      }
-
-    }
-  }
-
-  @include tablet {
-    padding-bottom: 3.4375rem;
-
-    .prices {
-      li {
-        width: 17.6875rem;
-
-        .label {
-          font-size: 1.75rem;
-        }
-
-        .price-label {
-          font-size: 1.5rem;
+        @include mobile {
+          font-size: 0.8rem;
+          height: 1.8125rem;
         }
       }
 
     }
-
   }
 
 }
@@ -374,6 +533,15 @@ body {
 
   }
 
+  @include tablet {
+    padding-top: 0;
+  }
+
+  @include mobile {
+    padding-top: 0.9375rem;
+    height: 25rem;
+  }
+
   .title {
     @include title;
   }
@@ -381,6 +549,11 @@ body {
   .wrapper {
     display: flex;
     justify-content: flex-end;
+
+    @include mobile {
+      justify-content: center;
+      margin-top: 1.9375rem;
+    }
 
     form {
       width: 37.5rem;
@@ -392,12 +565,27 @@ body {
       flex-direction: column;
       align-items: flex-end;
 
+      @include tablet {
+        width: 31.125rem;
+        padding: 2.125rem 1.25rem;
+      }
+
+      @include mobile {
+        width: 13.625rem;
+        height: 11.625rem;
+        padding: 1.3125rem 0.625rem;
+      }
+
       .inputs {
         display: flex;
         flex-direction: column;
         gap: 3.5rem;
         margin-bottom: 1.3125rem;
         width: 100%;
+
+        @include mobile {
+          gap: 1.125rem;
+        }
 
         input {
           color: #fff;
@@ -406,6 +594,10 @@ body {
           border-bottom: 0.1875rem solid $text;
           outline: 0;
           font-size: 1.25rem;
+
+          @include mobile {
+            font-size: 0.75rem;
+          }
 
           &::placeholder {
             color: #fff;
@@ -421,17 +613,11 @@ body {
         font-size: 1.25rem;
         border-radius: 0.9375rem;
         cursor: pointer;
-      }
-    }
-  }
 
-  @include tablet {
-    padding-top: 0;
-
-    .wrapper {
-      form {
-        width: 31.125rem;
-        padding: 2.125rem 1.25rem;
+        @include mobile {
+          font-size: 0.75rem;
+          padding: 0.125rem 1.3125rem;
+        }
       }
     }
   }
@@ -443,13 +629,19 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 4.375rem 0 4.375rem;
+  padding: 0 4.375rem;
   color: $text;
   font-size: 1.25rem;
 
-  a {
+  @include mobile {
+    font-size: 0.75rem;
+    padding: 0.5rem 1rem;
+    flex-wrap: wrap;
+  }
 
+  a {
     text-decoration: none;
+    order: 1;
   }
 
   .contacts {
@@ -461,10 +653,21 @@ footer {
         color: $cyan;
       }
     }
+
+    order: 2;
+
+    @include mobile {
+      order: 3;
+    }
   }
 
   .links {
     display: flex;
     gap: 1rem;
+    order: 3;
+
+    @include mobile {
+      order: 2;
+    }
   }
 }
