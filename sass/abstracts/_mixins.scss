@@ -1,4 +1,5 @@
 @use "./variables" as *;
+@use "./breakpoints" as *;
 
 @mixin title {
   font-weight: bold;
@@ -6,8 +7,16 @@
   text-align: center;
   color: $text;
   margin-bottom: 2.875rem;
+
+  @include tablet {
+    font-size: 3.75rem;
+  }
 }
 
 @mixin section {
   padding: 4.6875rem 4.375rem 0 4.375rem;
+
+  @include tablet {
+    padding: 3.4375rem 3.125rem 0 3.125rem;
+  }
 }

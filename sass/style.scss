@@ -17,6 +17,10 @@ body {
   background-size: cover;
   padding: 0 4.375rem;
 
+  @include tablet {
+    padding: 0 3.125rem;
+  }
+
   .content {
     position: relative;
     z-index: 10;
@@ -124,11 +128,21 @@ body {
       .label {
         font-size: 3rem;
         line-height: 3.5625rem;
+
+        @include tablet {
+          font-size: 2.75rem;
+          line-height: 3.3125rem;
+        }
       }
 
       .description {
         font-size: 2rem;
         line-height: 2.375rem;
+
+        @include tablet {
+          font-size: 1.75rem;
+          line-height: 2.0625rem;
+        }
       }
     }
   }
@@ -159,6 +173,12 @@ body {
         font-size: 2rem;
         font-weight: bold;
         line-height: 2.375rem;
+        text-align: center;
+
+        @include tablet {
+          font-size: 1.75rem;
+          line-height: 2.0625rem;
+        }
       }
 
       .description {
@@ -167,6 +187,11 @@ body {
         font-weight: normal;
         text-align: center;
         line-height: 1.9375rem;
+
+        @include tablet {
+          font-size: 1.375rem;
+          line-height: 1.625rem;
+        }
       }
     }
   }
@@ -184,6 +209,10 @@ body {
     justify-content: space-between;
     padding: 0 14.5rem;
     margin-bottom: 2.875rem;
+
+    @include tablet {
+      padding: 0 9.125rem;
+    }
 
     a {
       width: 15.3125rem;
@@ -209,6 +238,19 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 3.125rem;
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+
+      img:nth-child(5) {
+        display: none;
+
+      }
+
+      img:nth-child(6) {
+        display: none;
+      }
+    }
 
     img {
       width: 100%;
@@ -287,8 +329,30 @@ body {
         align-items: center;
 
       }
+
     }
   }
+
+  @include tablet {
+    padding-bottom: 3.4375rem;
+
+    .prices {
+      li {
+        width: 17.6875rem;
+
+        .label {
+          font-size: 1.75rem;
+        }
+
+        .price-label {
+          font-size: 1.5rem;
+        }
+      }
+
+    }
+
+  }
+
 }
 
 .contact {
@@ -345,6 +409,17 @@ body {
         font-size: 1.25rem;
         border-radius: 0.9375rem;
         cursor: pointer;
+      }
+    }
+  }
+
+  @include tablet {
+    padding-top: 0;
+
+    .wrapper {
+      form {
+        width: 31.125rem;
+        padding: 2.125rem 1.25rem;
       }
     }
   }
