@@ -729,6 +729,9 @@ body {
   position: absolute;
   z-index: 2;
 }
+.video .player .overlay img {
+  width: 10.5625rem;
+}
 @media (max-width: 972px) {
   .video .player .overlay img {
     width: 8rem;
@@ -1133,10 +1136,8 @@ footer .links {
     order: 2;
   }
 }
-@media (max-width: 576px) {
-  footer .links img {
-    width: 1.375rem;
-  }
+footer .links img {
+  width: 2rem;
 }
 
 /*# sourceMappingURL=style.css.map */
