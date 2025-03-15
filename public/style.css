@@ -160,6 +160,10 @@ body {
     padding: 0.85rem 0.6rem;
   }
 }
+.home .content header menu a:hover {
+  color: #0E8388;
+  transition: 0.15s;
+}
 @media (max-width: 576px) {
   .home .content header menu {
     display: none;
@@ -1120,6 +1124,7 @@ footer .contacts a {
 }
 footer .contacts a:hover {
   color: #0E8388;
+  transition: 0.15s;
 }
 @media (max-width: 576px) {
   footer .contacts {

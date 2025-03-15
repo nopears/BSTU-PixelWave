@@ -84,6 +84,11 @@ body {
             font-size: 1.3rem;
             padding: 0.85rem 0.6rem;
           }
+
+          &:hover {
+            color: $cyan;
+            transition: .15s;
+          }
         }
 
         @include mobile {
@@ -829,6 +834,7 @@ footer {
 
       &:hover {
         color: $cyan;
+        transition: .15s;
       }
     }
 
