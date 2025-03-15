@@ -17,6 +17,11 @@ body {
   background-size: cover;
   padding: 0 4.375rem;
 
+  @include laptop {
+    padding: 0 3.125rem;
+    height: 44.0625rem;
+  }
+
   @include tablet {
     padding: 0 3.125rem;
     height: 59.1875rem;
@@ -47,7 +52,7 @@ body {
       .title {
         font-size: 2rem;
         color: $text;
-        font-weight: bold;
+        font-weight: 700;
 
         @include mobile {
           font-size: 1.75rem;
@@ -71,8 +76,9 @@ body {
           text-decoration: none;
           color: #fff;
           font-size: 1.5rem;
+          font-weight: 400;
           cursor: pointer;
-          padding: 1rem 1.6875rem;
+          padding: 1rem 0.78125rem;
         }
 
         @include mobile {
@@ -104,6 +110,10 @@ body {
         color: #fff;
         text-align: right;
 
+        @include laptop {
+          margin-top: 3.4375rem;
+        }
+
         @include mobile {
           margin-top: 2.375rem;
         }
@@ -130,6 +140,7 @@ body {
         .subtitle {
           font-size: 1.75rem;
           margin-bottom: 1.1875rem;
+          font-weight: 700;
 
           @include mobile {
             display: none;
@@ -141,7 +152,7 @@ body {
           display: inline-block;
           color: $dark-bg;
           font-size: 1.75rem;
-          font-weight: bold;
+          font-weight: 700;
           padding: 1.25rem 1.5625rem;
           border-radius: 0.9375rem;
           text-decoration: none;
@@ -177,7 +188,7 @@ body {
   ul {
     border-left: 0.3125rem solid $text;
     color: $text;
-    padding-left: 4.375rem;
+    padding-left: 3.125rem;
     list-style: none;
     max-width: 56.75rem;
     margin: auto;
@@ -192,6 +203,12 @@ body {
       .label {
         font-size: 3rem;
         line-height: 3.5625rem;
+        font-weight: 700;
+
+        @include laptop {
+          font-size: 2.5rem;
+          line-height: 3rem;
+        }
 
         @include tablet {
           font-size: 2.75rem;
@@ -207,6 +224,11 @@ body {
       .description {
         font-size: 2rem;
         line-height: 2.375rem;
+
+        @include laptop {
+          font-size: 1.5rem;
+          line-height: 1.8125rem;
+        }
 
         @include tablet {
           font-size: 1.75rem;
@@ -254,6 +276,7 @@ body {
 
       img {
         margin-bottom: 1.25rem;
+        width: 5rem;
 
         @include mobile {
           width: 2rem;
@@ -263,9 +286,14 @@ body {
 
       .label {
         font-size: 2rem;
-        font-weight: bold;
+        font-weight: 700;
         line-height: 2.375rem;
         text-align: center;
+
+        @include laptop {
+          font-size: 1.5rem;
+          line-height: 1.8125rem;
+        }
 
         @include tablet {
           font-size: 1.75rem;
@@ -279,10 +307,16 @@ body {
 
       .description {
         max-width: 13.75rem;
+        margin-top: 0.5rem;
         font-size: 1.625rem;
-        font-weight: normal;
+        font-weight: 500;
         text-align: center;
-        line-height: 1.9375rem;
+        line-height: 1.8125rem;
+
+        @include laptop {
+          max-width: 11.875rem;
+          font-size: 1.5rem;
+        }
 
         @include tablet {
           font-size: 1.375rem;
@@ -317,12 +351,20 @@ body {
     padding: 0 14.5rem;
     margin-bottom: 2.875rem;
 
+    @include laptop {
+      margin-bottom: 2.6875rem;
+    }
+
     @include tablet {
       padding: 0 9.125rem;
     }
 
     @include mobile {
       display: none;
+    }
+
+    @include custom(1255) {
+      padding: 0 6rem;
     }
 
     a {
@@ -336,11 +378,20 @@ body {
       text-decoration: none;
       color: $text;
       font-size: 1.75rem;
-      font-weight: semibold;
+      font-weight: 600;
 
       &:nth-child(2) {
         background-color: $text;
         color: $dark-bg;
+      }
+
+      @include custom(1352) {
+        width: 13rem;
+      }
+
+      @include custom(1255) {
+        width: 12rem;
+        font-size: 1.5rem;
       }
     }
   }
@@ -349,6 +400,10 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 3.125rem;
+
+    @include laptop {
+      gap: 0.8125rem;
+    }
 
     @include tablet {
       grid-template-columns: repeat(2, 1fr);
@@ -452,6 +507,10 @@ body {
       padding-top: 1.6875rem;
       gap: 2rem;
 
+      @include custom(1352) {
+        width: 18rem;
+      }
+
       @include tablet {
         width: 17.6875rem;
       }
@@ -464,6 +523,7 @@ body {
 
       .label {
         font-size: 2rem;
+        font-weight: 500;
         color: $text;
 
         @include tablet {
@@ -487,6 +547,7 @@ body {
 
       .price-label {
         font-size: 1.75rem;
+        font-weight: 700;
         color: $text;
 
         @include tablet {
@@ -495,7 +556,6 @@ body {
 
         @include mobile {
           font-size: 1.15rem;
-          font-weight: bold;
         }
       }
 
@@ -503,6 +563,7 @@ body {
         color: #fff;
         text-decoration: none;
         font-size: 1.5rem;
+        font-weight: 700;
         display: flex;
         width: 12.5rem;
         height: 4.375rem;
@@ -544,6 +605,10 @@ body {
 
   .title {
     @include title;
+
+    @include laptop {
+      margin-bottom: 3.75rem;
+    }
   }
 
   .wrapper {
@@ -557,13 +622,18 @@ body {
 
     form {
       width: 37.5rem;
-      height: 21.6875rem;
+      height: 24.0625rem;
       background-color: $cyan;
       border-radius: 1.875rem;
-      padding: 2.75rem 4.8125rem;
+      padding: 3.125rem 4.8125rem;
       display: flex;
       flex-direction: column;
       align-items: flex-end;
+
+      // @include laptop {
+      //   width: 37.5rem;
+      //   height: 24.0625rem;
+      // }
 
       @include tablet {
         width: 31.125rem;
@@ -580,7 +650,7 @@ body {
         display: flex;
         flex-direction: column;
         gap: 3.5rem;
-        margin-bottom: 1.3125rem;
+        margin-bottom: 1.6875rem;
         width: 100%;
 
         @include mobile {
@@ -594,6 +664,7 @@ body {
           border-bottom: 0.1875rem solid $text;
           outline: 0;
           font-size: 1.25rem;
+          font-weight: 700;
 
           @include mobile {
             font-size: 0.75rem;
@@ -611,6 +682,7 @@ body {
         border: 0.1875rem solid $text;
         padding: 0.625rem 2.625rem;
         font-size: 1.25rem;
+        font-weight: 700;
         border-radius: 0.9375rem;
         cursor: pointer;
 
@@ -632,6 +704,12 @@ footer {
   padding: 0 4.375rem;
   color: $text;
   font-size: 1.25rem;
+  font-weight: 700;
+
+  @include laptop {
+    padding: 0 3.125rem;
+    height: 5.3125rem;
+  }
 
   @include mobile {
     font-size: 0.75rem;
