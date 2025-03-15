@@ -1,3 +1,138 @@
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Lato, "Helvetica Neue", Arial, sans-serif;
+}
+
+@font-face {
+  font-display: block;
+  font-family: "Lato";
+  src: url("./assets/fonts/Lato/Lato-Hairline.woff2");
+  font-weight: 100;
+}
+
+@font-face {
+  font-display: block;
+  font-family: "Lato";
+  src: url("./assets/fonts/Lato/Lato-HairlineItalic.woff2");
+  font-weight: 100;
+  font-style: italic;
+}
+
+@font-face {
+  font-display: block;
+  font-family: "Lato";
+  src: url("./assets/fonts/Lato/Lato-Thin.woff2");
+  font-weight: 200;
+}
+
+@font-face {
+  font-display: block;
+  font-family: "Lato";
+  src: url("./assets/fonts/Lato/Lato-ThinItalic.woff2");
+  font-weight: 200;
+  font-style: italic;
+}
+
+@font-face {
+  font-display: block;
+  font-family: "Lato";
+  src: url("./assets/fonts/Lato/Lato-Light.woff2");
+  font-weight: 300;
+}
+
+@font-face {
+  font-display: block;
+  font-family: "Lato";
+  src: url("./assets/fonts/Lato/Lato-LightItalic.woff2");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-display: block;
+  font-family: "Lato";
+  src: url("./assets/fonts/Lato/Lato-Regular.woff2");
+  font-weight: 400;
+}
+
+@font-face {
+  font-display: block;
+  font-family: "Lato";
+  src: url("./assets/fonts/Lato/Lato-Italic.woff2");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-display: block;
+  font-family: "Lato";
+  src: url("./assets/fonts/Lato/Lato-Medium.woff2");
+  font-weight: 500;
+}
+
+@font-face {
+  font-display: block;
+  font-family: "Lato";
+  src: url("./assets/fonts/Lato/Lato-MediumItalic.woff2");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-display: block;
+  font-family: "Lato";
+  src: url("./assets/fonts/Lato/Lato-Semibold.woff2");
+  font-weight: 600;
+}
+
+@font-face {
+  font-display: block;
+  font-family: "Lato";
+  src: url("./assets/fonts/Lato/Lato-SemiboldItalic.woff2");
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-display: block;
+  font-family: "Lato";
+  src: url("./assets/fonts/Lato/Lato-Bold.woff2");
+  font-weight: 700;
+}
+
+@font-face {
+  font-display: block;
+  font-family: "Lato";
+  src: url("./assets/fonts/Lato/Lato-BoldItalic.woff2");
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-display: block;
+  font-family: "Lato";
+  src: url("./assets/fonts/Lato/Lato-Heavy.woff2");
+  font-weight: 800;
+}
+
+@font-face {
+  font-display: block;
+  font-family: "Lato";
+  src: url("./assets/fonts/Lato/Lato-HeavyItalic.woff2");
+  font-weight: 800;
+  font-style: italic;
+}
+
+@font-face {
+  font-display: block;
+  font-family: "Lato";
+  src: url("./assets/fonts/Lato/Lato-Black.woff2");
+  font-weight: 900;
+}
+
+@font-face {
+  font-display: block;
+  font-family: "Lato";
+  src: url("./assets/fonts/Lato/Lato-BlackItalic.woff2");
+  font-weight: 900;
+  font-style: italic;
 }
