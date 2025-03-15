@@ -79,6 +79,11 @@ body {
           font-weight: 400;
           cursor: pointer;
           padding: 1rem 0.78125rem;
+
+          @include custom(624) {
+            font-size: 1.3rem;
+            padding: 0.85rem 0.6rem;
+          }
         }
 
         @include mobile {
@@ -138,11 +143,15 @@ body {
             line-height: 4rem;
           }
 
+          @include custom(624) {
+            font-size: 3rem;
+          }
+
           @include mobile {
             font-size: 2.5rem;
             line-height: 3rem;
-            margin-bottom: 1.5625rem;
-            max-width: 14.0625rem;
+            margin-bottom: 6.8125rem;
+            max-width: 18rem;
           }
         }
 
@@ -155,6 +164,10 @@ body {
             font-size: 1.5rem;
             line-height: 1.8125rem;
             margin-bottom: 2.125rem;
+          }
+
+          @include custom(624) {
+            font-size: 1.25rem;
           }
 
           @include mobile {
@@ -192,8 +205,8 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: $dark-bg;
-    opacity: 55%;
+    background-color: $footer-bg;
+    opacity: 65%;
   }
 }
 
@@ -221,6 +234,10 @@ body {
 
       @include tablet {
         margin-bottom: 3.4375rem;
+      }
+
+      @include tablet {
+        margin-bottom: 3rem;
       }
 
       .label {
@@ -296,6 +313,9 @@ body {
         border-radius: 1.25rem;
       }
 
+      @include mobile {
+        padding: 1.125rem 2rem;
+      }
 
       img {
         margin-bottom: 1.25rem;
@@ -304,6 +324,10 @@ body {
         @include tablet {
           width: 6rem;
           margin: 0;
+        }
+
+        @include mobile {
+          width: 2rem;
         }
       }
 
@@ -358,7 +382,7 @@ body {
 
   .dots {
     color: #fff;
-    font-size: 4rem;
+    font-size: 1.625rem;
     text-align: center;
     line-height: 2rem;
     display: none;
@@ -416,6 +440,11 @@ body {
       @include custom(1255) {
         width: 12rem;
         font-size: 1.5rem;
+      }
+
+      @include custom(700) {
+        width: 9.5rem;
+        font-size: 1.4rem;
       }
 
     }
@@ -504,12 +533,15 @@ body {
   @include section;
 
   & {
-
     padding-bottom: 4.6875rem;
   }
 
   @include tablet {
     padding-bottom: 3.4375rem;
+  }
+
+  @include mobile {
+    padding-bottom: 1rem;
   }
 
   .title {
@@ -524,6 +556,10 @@ body {
     @include tablet {
       flex-direction: column;
       gap: 1.5625rem;
+    }
+
+    @include mobile {
+      gap: 1.375rem;
     }
 
     li {
@@ -547,13 +583,23 @@ body {
         height: auto;
       }
 
+      @include mobile {
+        padding: 1.4375rem 2.1875rem;
+        gap: 1.375rem;
+      }
+
       .label {
         font-size: 2rem;
         font-weight: 500;
         color: $text;
+        text-align: center;
 
         @include tablet {
           font-size: 3rem;
+        }
+
+        @include mobile {
+          font-size: 1.125rem;
         }
       }
 
@@ -566,6 +612,10 @@ body {
           font-size: 2rem;
           display: block;
         }
+
+        @include mobile {
+          font-size: 0.8125rem;
+        }
       }
 
       .price-label {
@@ -575,6 +625,10 @@ body {
 
         @include tablet {
           font-size: 1.5rem;
+        }
+
+        @include mobile {
+          font-size: 1.125rem;
         }
       }
 
@@ -595,6 +649,11 @@ body {
           font-size: 1.5rem;
           width: 100%;
           height: 3.4375rem;
+        }
+
+        @include mobile {
+          font-size: 0.8125rem;
+          height: 1.8125rem;
         }
       }
 
@@ -745,7 +804,12 @@ footer {
     height: 4.5rem;
   }
 
+  @include custom(624) {
+    font-size: 1rem;
+  }
+
   @include mobile {
+    height: 6.5rem;
     font-size: 0.75rem;
     padding: 0.5rem 1rem;
     flex-wrap: wrap;
@@ -780,6 +844,12 @@ footer {
 
     @include mobile {
       order: 2;
+    }
+
+    img {
+      @include mobile {
+        width: 1.375rem;
+      }
     }
   }
 }
