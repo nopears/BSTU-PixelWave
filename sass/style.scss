@@ -455,6 +455,7 @@ body {
       @include custom(505) {
         font-size: 1.2rem;
         width: 8rem;
+        height: 3.375rem;
       }
 
       @include custom(430) {
@@ -465,7 +466,6 @@ body {
       @include custom(350) {
         font-size: 0.65rem;
         width: 5.25rem;
-        height: 3.375rem;
       }
 
     }
