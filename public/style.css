@@ -282,7 +282,7 @@ body {
   color: #0E8388;
   transition: 0.15s;
 }
-@media (max-width: 576px) {
+@media (max-width: 590px) {
   .home .content header .links {
     display: none;
   }
@@ -290,7 +290,7 @@ body {
 .home .content header .header__burger {
   display: none;
 }
-@media (max-width: 576px) {
+@media (max-width: 590px) {
   .home .content header .header__burger {
     display: block;
   }

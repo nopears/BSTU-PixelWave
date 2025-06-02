@@ -91,14 +91,14 @@ body {
           }
         }
 
-        @include mobile {
+        @include custom(590) {
           display: none;
         }
       }
 
       .header__burger {
         display: none;
-        @include mobile {
+        @include custom(590) {
             display: block;
         }
         .burger__icon {
