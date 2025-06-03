@@ -1,0 +1,93 @@
+@use "abstracts/variables" as *;
+@use "abstracts/mixins" as *;
+@use "abstracts/breakpoints" as *;
+
+.products {
+  @include section;
+
+  .title {
+    @include title;
+  }
+
+  .product-list {
+    display: flex;
+    justify-content: space-between;
+
+    @include tablet {
+      flex-direction: column;
+      gap: 1.6875rem;
+    }
+
+    li {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: $text;
+
+      @include tablet {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1.5625rem 3.125rem;
+        border: 0.0625rem solid $cyan;
+        border-radius: 1.25rem;
+      }
+
+      @include mobile {
+        padding: 1.125rem 2rem;
+      }
+
+      img {
+        margin-bottom: 1.25rem;
+        width: 5rem;
+
+        @include tablet {
+          width: 6rem;
+          margin: 0;
+        }
+
+        @include mobile {
+          width: 2rem;
+        }
+      }
+
+      .label {
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 2.375rem;
+        text-align: center;
+
+        @include laptop {
+          font-size: 1.5rem;
+          line-height: 1.8125rem;
+        }
+
+        @include tablet {
+          font-size: 2.5rem;
+          line-height: 3rem;
+        }
+
+        @include mobile {
+          font-size: 1.25rem;
+        }
+      }
+
+      .description {
+        max-width: 13.75rem;
+        margin-top: 0.5rem;
+        font-size: 1.625rem;
+        font-weight: 500;
+        text-align: center;
+        line-height: 1.8125rem;
+
+        @include laptop {
+          max-width: 11.875rem;
+          font-size: 1.5rem;
+        }
+
+        @include tablet {
+          display: none;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,141 @@
+@use "abstracts/variables" as *;
+@use "abstracts/mixins" as *;
+@use "abstracts/breakpoints" as *;
+
+.pictures {
+  @include section;
+
+  .title {
+    @include title;
+  }
+
+  .dots {
+    color: #fff;
+    font-size: 1.625rem;
+    text-align: center;
+    line-height: 2rem;
+    display: none;
+
+    @include mobile {
+      display: block;
+    }
+  }
+
+  .selector {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 14.5rem;
+    margin-bottom: 2.875rem;
+
+    @include custom(1255) {
+      padding: 0 6rem;
+    }
+
+    @include laptop {
+      margin-bottom: 2.6875rem;
+    }
+
+    @include tablet {
+      padding: 0;
+      margin-bottom: 1.5625rem;
+    }
+
+    @include mobile {
+      margin-bottom: 0.9375;
+    }
+
+    a {
+      width: 15.3125rem;
+      height: 4.6875rem;
+      border: 0.3125rem solid $text;
+      border-radius: 1.25rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      color: $text;
+      font-size: 1.75rem;
+      font-weight: 600;
+
+      &:nth-child(2) {
+        background-color: $text;
+        color: $dark-bg;
+      }
+
+      @include custom(1352) {
+        width: 13rem;
+      }
+
+      @include custom(1255) {
+        width: 12rem;
+        font-size: 1.5rem;
+      }
+
+      @include custom(700) {
+        width: 9.5rem;
+        font-size: 1.4rem;
+      }
+
+      @include custom(505) {
+        font-size: 1.2rem;
+        width: 8rem;
+        height: 3.375rem;
+      }
+
+      @include custom(430) {
+        font-size: 0.9rem;
+        width: 6.5rem;
+      }
+
+      @include custom(350) {
+        font-size: 0.65rem;
+        width: 5.25rem;
+      }
+
+    }
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3.125rem;
+
+    @include laptop {
+      gap: 0.8125rem;
+    }
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3.125rem;
+
+      img:nth-child(5) {
+        display: none;
+
+      }
+
+      img:nth-child(6) {
+        display: none;
+      }
+    }
+
+    @include mobile {
+      grid-template-columns: 1fr;
+
+      img:nth-child(4) {
+        display: none;
+      }
+
+      img:nth-child(3) {
+        display: none;
+      }
+
+      img:nth-child(2) {
+        display: none;
+      }
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}
