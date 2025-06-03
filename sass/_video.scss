@@ -1,0 +1,39 @@
+@use "abstracts/variables" as *;
+@use "abstracts/mixins" as *;
+@use "abstracts/breakpoints" as *;
+
+.video {
+  @include section;
+
+  .title {
+    @include title;
+  }
+
+  .player {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .overlay {
+      position: absolute;
+      z-index: 2;
+
+      img {
+        width: 10.5625rem;
+
+        @include tablet {
+          width: 8rem;
+        }
+
+        @include mobile {
+          width: 2.25rem;
+        }
+      }
+    }
+
+    img {
+      width: 100%;
+      cursor: pointer;
+    }
+  }
+}
