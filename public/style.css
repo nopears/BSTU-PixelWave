@@ -914,27 +914,6 @@ body {
   align-items: center;
   justify-content: center;
 }
-.video .player .overlay {
-  position: absolute;
-  z-index: 2;
-}
-.video .player .overlay img {
-  width: 10.5625rem;
-}
-@media (max-width: 972px) {
-  .video .player .overlay img {
-    width: 8rem;
-  }
-}
-@media (max-width: 576px) {
-  .video .player .overlay img {
-    width: 2.25rem;
-  }
-}
-.video .player img {
-  width: 100%;
-  cursor: pointer;
-}
 
 .price {
   padding: 4.6875rem 4.375rem 0 4.375rem;
