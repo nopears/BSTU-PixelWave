@@ -98,7 +98,6 @@
 
   .gallery-container {
     position: relative; 
-    /* No overflow: hidden; here */
 
     &:hover .arrow {
         opacity: 1;
@@ -124,18 +123,17 @@
     svg {
         width: 100%;
         height: 100%;
-        /* You can further style the SVG path fill here if needed */
         path {
-            fill: white; /* Ensure the SVG path is white */
+            fill: white; 
         }
     }
 
     &.left-arrow {
-      left: -3.5rem; /* Adjust this value to move it further left outside the container */
+      left: -3.5rem;
     }
 
     &.right-arrow {
-      right: -3.5rem; /* Adjust this value to move it further right outside the container */
+      right: -3.5rem;
     }
   }
 
