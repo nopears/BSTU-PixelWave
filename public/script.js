@@ -4,17 +4,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const arrowLeft = document.querySelector('.left-arrow');
     const arrowRight = document.querySelector('.right-arrow');
 
-    let currentGalleryElement = null; 
+    let currentGalleryElement = null;
     let currentGalleryColumns = [];
     let activeGalleryId = '';
-    let currentIndex = 0;
+    let columnsPerView = 3;
 
     const getColumnsPerView = () => {
-        if (window.matchMedia('(max-width: 768px)').matches) { 
-            return 2;
-        }
-        if (window.matchMedia('(max-width: 480px)').matches) {
+        const width = window.innerWidth;
+        if (width <= 480) {
             return 1;
+        } else if (width <= 768) { 
+            return 2;
         }
         return 3; 
     };
@@ -22,15 +22,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const updateGalleryDisplay = () => {
         if (!currentGalleryElement) return;
 
-        const columnsPerView = getColumnsPerView();
-        const totalColumns = currentGalleryColumns.length;
+        columnsPerView = getColumnsPerView(); 
 
         currentGalleryElement.style.transition = 'none';
         currentGalleryElement.style.transform = `translateX(0)`;
 
         currentGalleryElement.innerHTML = '';
 
-        for (let i = 0; i < totalColumns; i++) {
+        for (let i = 0; i < currentGalleryColumns.length; i++) {
             currentGalleryElement.appendChild(currentGalleryColumns[i]);
         }
     };
@@ -41,7 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 gallery.hidden = false;
                 currentGalleryElement = gallery;
                 currentGalleryColumns = Array.from(gallery.querySelectorAll('[data-gallery-column]'));
-                currentIndex = 0;
                 updateGalleryDisplay(); 
             } else {
                 gallery.hidden = true;
@@ -70,19 +68,25 @@ document.addEventListener('DOMContentLoaded', () => {
     arrowRight.addEventListener('click', () => {
         if (!currentGalleryElement || currentGalleryColumns.length === 0) return;
 
-        const columnsPerView = getColumnsPerView();
-        const columnWidth = currentGalleryColumns[0].offsetWidth + (parseFloat(getComputedStyle(currentGalleryElement).gap));
+        const gap = parseFloat(getComputedStyle(currentGalleryElement).gap);
+        const columnWidth = currentGalleryColumns[0].offsetWidth; 
+        const slideDistance = (columnWidth * columnsPerView) + (gap * (columnsPerView - 1));
 
-        const firstColumn = currentGalleryColumns.shift();
-        currentGalleryColumns.push(firstColumn);
+        const columnsToMove = [];
+        for (let i = 0; i < columnsPerView; i++) {
+            if (currentGalleryColumns.length > 0) {
+                columnsToMove.push(currentGalleryColumns.shift());
+            }
+        }
 
         currentGalleryElement.style.transition = 'transform 0.5s ease-in-out';
-        currentGalleryElement.style.transform = `translateX(-${columnWidth}px)`;
+        currentGalleryElement.style.transform = `translateX(-${slideDistance}px)`;
 
         currentGalleryElement.addEventListener('transitionend', function handler() {
             currentGalleryElement.style.transition = 'none';
             currentGalleryElement.style.transform = `translateX(0)`;
-            currentGalleryElement.appendChild(firstColumn);
+            columnsToMove.forEach(col => currentGalleryColumns.push(col)); 
+            updateGalleryDisplay(); 
             currentGalleryElement.removeEventListener('transitionend', handler);
         }, { once: true });
     });
@@ -90,18 +94,24 @@ document.addEventListener('DOMContentLoaded', () => {
     arrowLeft.addEventListener('click', () => {
         if (!currentGalleryElement || currentGalleryColumns.length === 0) return;
 
-        const columnsPerView = getColumnsPerView();
-        const columnWidth = currentGalleryColumns[0].offsetWidth + (parseFloat(getComputedStyle(currentGalleryElement).gap));
+        const gap = parseFloat(getComputedStyle(currentGalleryElement).gap);
+        const columnWidth = currentGalleryColumns[0].offsetWidth;
+        const slideDistance = (columnWidth * columnsPerView) + (gap * (columnsPerView - 1));
 
-        const lastColumn = currentGalleryColumns.pop();
-        currentGalleryColumns.unshift(lastColumn);
+        const columnsToMove = [];
+        for (let i = 0; i < columnsPerView; i++) {
+            if (currentGalleryColumns.length > 0) {
+                columnsToMove.unshift(currentGalleryColumns.pop()); 
+            }
+        }
+        currentGalleryColumns.unshift(...columnsToMove); 
 
-        currentGalleryElement.prepend(lastColumn);
+        columnsToMove.reverse().forEach(col => currentGalleryElement.prepend(col));
 
         currentGalleryElement.style.transition = 'none';
-        currentGalleryElement.style.transform = `translateX(-${columnWidth}px)`;
+        currentGalleryElement.style.transform = `translateX(-${slideDistance}px)`;
 
-        void currentGalleryElement.offsetWidth; 
+        void currentGalleryElement.offsetWidth;
 
         currentGalleryElement.style.transition = 'transform 0.5s ease-in-out';
         currentGalleryElement.style.transform = `translateX(0px)`;
