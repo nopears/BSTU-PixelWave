@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentGalleryColumns = [];
     let activeGalleryId = '';
     let columnsPerView = 3;
+    let isAnimating = false; 
 
     const getColumnsPerView = () => {
         const width = window.innerWidth;
@@ -24,14 +25,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         columnsPerView = getColumnsPerView(); 
 
+        currentGalleryElement.innerHTML = '';
+        currentGalleryColumns.forEach(col => currentGalleryElement.appendChild(col));
+
         currentGalleryElement.style.transition = 'none';
         currentGalleryElement.style.transform = `translateX(0)`;
-
-        currentGalleryElement.innerHTML = '';
-
-        for (let i = 0; i < currentGalleryColumns.length; i++) {
-            currentGalleryElement.appendChild(currentGalleryColumns[i]);
-        }
     };
 
     const updateGalleryVisibility = (targetGalleryId) => {
@@ -51,6 +49,8 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('click', (e) => {
             e.preventDefault();
 
+            if (isAnimating) return; 
+
             galleryButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
 
@@ -66,47 +66,50 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     arrowRight.addEventListener('click', () => {
-        if (!currentGalleryElement || currentGalleryColumns.length === 0) return;
+        if (isAnimating || !currentGalleryElement || currentGalleryColumns.length === 0) return;
+        isAnimating = true;
 
         const gap = parseFloat(getComputedStyle(currentGalleryElement).gap);
         const columnWidth = currentGalleryColumns[0].offsetWidth; 
-        const slideDistance = (columnWidth * columnsPerView) + (gap * (columnsPerView - 1));
+        const slideDistance = (columnWidth * columnsPerView) + (gap * (columnsPerView > 1 ? (columnsPerView - 1) : 0));
 
-        const columnsToMove = [];
+        const columnsToAppend = [];
         for (let i = 0; i < columnsPerView; i++) {
-            if (currentGalleryColumns.length > 0) {
-                columnsToMove.push(currentGalleryColumns.shift());
-            }
+            const nextIndex = (currentGalleryColumns.length + i) % currentGalleryColumns.length;
+            columnsToAppend.push(currentGalleryColumns[nextIndex].cloneNode(true));
         }
+        columnsToAppend.forEach(col => currentGalleryElement.appendChild(col));
 
         currentGalleryElement.style.transition = 'transform 0.5s ease-in-out';
         currentGalleryElement.style.transform = `translateX(-${slideDistance}px)`;
 
         currentGalleryElement.addEventListener('transitionend', function handler() {
+            const shiftedColumns = currentGalleryColumns.splice(0, columnsPerView);
+            currentGalleryColumns.push(...shiftedColumns);
+
             currentGalleryElement.style.transition = 'none';
             currentGalleryElement.style.transform = `translateX(0)`;
-            columnsToMove.forEach(col => currentGalleryColumns.push(col)); 
-            updateGalleryDisplay(); 
+            updateGalleryDisplay();
+
+            isAnimating = false;
             currentGalleryElement.removeEventListener('transitionend', handler);
         }, { once: true });
     });
 
     arrowLeft.addEventListener('click', () => {
-        if (!currentGalleryElement || currentGalleryColumns.length === 0) return;
+        if (isAnimating || !currentGalleryElement || currentGalleryColumns.length === 0) return;
+        isAnimating = true;
 
         const gap = parseFloat(getComputedStyle(currentGalleryElement).gap);
         const columnWidth = currentGalleryColumns[0].offsetWidth;
-        const slideDistance = (columnWidth * columnsPerView) + (gap * (columnsPerView - 1));
+        const slideDistance = (columnWidth * columnsPerView) + (gap * (columnsPerView > 1 ? (columnsPerView - 1) : 0));
 
-        const columnsToMove = [];
+        const columnsToPrepend = [];
         for (let i = 0; i < columnsPerView; i++) {
-            if (currentGalleryColumns.length > 0) {
-                columnsToMove.unshift(currentGalleryColumns.pop()); 
-            }
+            const prevIndex = (currentGalleryColumns.length - columnsPerView + i) % currentGalleryColumns.length;
+            columnsToPrepend.push(currentGalleryColumns[prevIndex].cloneNode(true));
         }
-        currentGalleryColumns.unshift(...columnsToMove); 
-
-        columnsToMove.reverse().forEach(col => currentGalleryElement.prepend(col));
+        columnsToPrepend.reverse().forEach(col => currentGalleryElement.prepend(col));
 
         currentGalleryElement.style.transition = 'none';
         currentGalleryElement.style.transform = `translateX(-${slideDistance}px)`;
@@ -115,6 +118,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
         currentGalleryElement.style.transition = 'transform 0.5s ease-in-out';
         currentGalleryElement.style.transform = `translateX(0px)`;
+
+        currentGalleryElement.addEventListener('transitionend', function handler() {
+            for (let i = 0; i < columnsPerView; i++) {
+                currentGalleryElement.removeChild(currentGalleryElement.lastChild);
+            }
+
+            const shiftedColumns = currentGalleryColumns.splice(currentGalleryColumns.length - columnsPerView, columnsPerView);
+            currentGalleryColumns.unshift(...shiftedColumns);
+
+            currentGalleryElement.style.transition = 'none';
+            currentGalleryElement.style.transform = `translateX(0)`;
+            updateGalleryDisplay(); 
+
+            isAnimating = false;
+            currentGalleryElement.removeEventListener('transitionend', handler);
+        }, { once: true });
     });
 
     window.addEventListener('resize', updateGalleryDisplay);
