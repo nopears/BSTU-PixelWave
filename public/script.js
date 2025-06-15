@@ -36,11 +36,13 @@ document.addEventListener('DOMContentLoaded', () => {
         galleries.forEach(gallery => {
             if (gallery.id === targetGalleryId) {
                 gallery.hidden = false;
+                gallery.setAttribute('aria-selected', 'true');
                 currentGalleryElement = gallery;
                 currentGalleryColumns = Array.from(gallery.querySelectorAll('[data-gallery-column]'));
                 updateGalleryDisplay(); 
             } else {
                 gallery.hidden = true;
+                gallery.setAttribute('aria-selected', 'false');
             }
         });
     };
@@ -51,8 +53,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (isAnimating) return; 
 
-            galleryButtons.forEach(btn => btn.classList.remove('active'));
+            galleryButtons.forEach(btn => {
+                btn.classList.remove('active');
+                btn.setAttribute('aria-selected', 'false'); 
+            });
             button.classList.add('active');
+            button.setAttribute('aria-selected', 'true'); 
 
             activeGalleryId = button.dataset.galleryTarget;
             updateGalleryVisibility(activeGalleryId);
@@ -61,6 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (galleryButtons.length > 0) {
         galleryButtons[0].classList.add('active');
+        galleryButtons[0].setAttribute('aria-selected', 'true'); 
         activeGalleryId = galleryButtons[0].dataset.galleryTarget;
         updateGalleryVisibility(activeGalleryId);
     }
@@ -136,5 +143,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { once: true });
     });
 
-    window.addEventListener('resize', updateGalleryDisplay);
+    let resizeTimer; 
+    window.addEventListener('resize', () => { 
+        clearTimeout(resizeTimer); 
+        resizeTimer = setTimeout(() => { 
+            updateGalleryDisplay(); 
+        }, 250); 
+    });
 });

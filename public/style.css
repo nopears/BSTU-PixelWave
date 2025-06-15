@@ -64,13 +64,6 @@ select {
   font: inherit;
 }
 
-/* Remove all animations and transitions for people that prefer not to see them */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation: none !important;
-    transition: none !important;
-  }
-}
 body {
   font-family: -apple-system, BlinkMacSystemFont, Lato, "Helvetica Neue", Arial, sans-serif;
 }
@@ -776,7 +769,7 @@ body {
 }
 @media (max-width: 576px) {
   .pictures .selector {
-    margin-bottom: 0.9375;
+    margin-bottom: 0.9375rem;
   }
 }
 .pictures .selector a {

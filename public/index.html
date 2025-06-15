@@ -118,59 +118,59 @@
 	<div class="pictures">
 		<div class="title">Pictures</div>
 		<div class="selector">
-			<a href="#" data-gallery-target="cms-gallery">CMS</a>
-			<a href="#" data-gallery-target="landing-gallery">Landing</a>
-			<a href="#" data-gallery-target="ecommerce-gallery">E-Commerce</a>
+			<a href="#" data-gallery-target="cms-gallery" role="tab" aria-controls="cms-gallery">CMS</a>
+			<a href="#" data-gallery-target="landing-gallery" role="tab" aria-controls="landing-gallery">Landing</a>
+			<a href="#" data-gallery-target="ecommerce-gallery" role="tab" aria-controls="ecommerce-gallery">E-Commerce</a>
 		</div>
 		<div class="gallery-container">
-			<div id="cms-gallery" class="gallery active" data-gallery>
+			<div id="cms-gallery" class="gallery active" data-gallery role="tabpanel" aria-labelledby="cms-gallery-tab">
 				<div class="gallery-column" data-gallery-column>
-					<img src="./assets/jpg/image1.jpg" alt="">
-					<img src="./assets/jpg/image2.jpg" alt="">
+					<img src="./assets/jpg/image1.jpg" alt="Website screenshot 1" loading="lazy">
+					<img src="./assets/jpg/image2.jpg" alt="Website screenshot 2" loading="lazy">
 				</div>
 					<div class="gallery-column" data-gallery-column>
-					<img src="./assets/jpg/image3.jpg" alt="">
-					<img src="./assets/jpg/image4.jpg" alt="">
+					<img src="./assets/jpg/image3.jpg" alt="Website screenshot 3" loading="lazy">
+					<img src="./assets/jpg/image4.jpg" alt="Website screenshot 4" loading="lazy">
 				</div>
 					<div class="gallery-column" data-gallery-column>
-					<img src="./assets/jpg/image5.jpg" alt="">
-					<img src="./assets/jpg/image6.jpg" alt="">
+					<img src="./assets/jpg/image5.jpg" alt="Website screenshot 5" loading="lazy">
+					<img src="./assets/jpg/image6.jpg" alt="Website screenshot 6" loading="lazy">
 				</div>
 			</div>
-			<div id="landing-gallery" class="gallery" data-gallery hidden>
+			<div id="landing-gallery" class="gallery" data-gallery hidden role="tabpanel" aria-labelledby="landing-gallery-tab">
 				<div class="gallery-column" data-gallery-column>
-					<img src="./assets/jpg/image3.jpg" alt="">
-					<img src="./assets/jpg/image4.jpg" alt="">
+					<img src="./assets/jpg/image3.jpg" alt="Website screenshot 3" loading="lazy">
+					<img src="./assets/jpg/image4.jpg" alt="Website screenshot 4" loading="lazy">
 				</div>
 					<div class="gallery-column" data-gallery-column>
-					<img src="./assets/jpg/image5.jpg" alt="">
-					<img src="./assets/jpg/image6.jpg" alt="">
+					<img src="./assets/jpg/image5.jpg" alt="Website screenshot 5" loading="lazy">
+					<img src="./assets/jpg/image6.jpg" alt="Website screenshot 6" loading="lazy">
 				</div>
 					<div class="gallery-column" data-gallery-column>
-					<img src="./assets/jpg/image1.jpg" alt="">
-					<img src="./assets/jpg/image2.jpg" alt="">
+					<img src="./assets/jpg/image1.jpg" alt="Website screenshot 1" loading="lazy">
+					<img src="./assets/jpg/image2.jpg" alt="Website screenshot 2" loading="lazy">
 				</div>
 			</div>
-			<div id="ecommerce-gallery" class="gallery" data-gallery hidden>
+			<div id="ecommerce-gallery" class="gallery" data-gallery hidden role="tabpanel" aria-labelledby="ecommerce-gallery-tab">
 				<div class="gallery-column" data-gallery-column>
-					<img src="./assets/jpg/image5.jpg" alt="">
-					<img src="./assets/jpg/image6.jpg" alt="">
+					<img src="./assets/jpg/image5.jpg" alt="Website screenshot 5" loading="lazy">
+					<img src="./assets/jpg/image6.jpg" alt="Website screenshot 6" loading="lazy">
 				</div>
 					<div class="gallery-column" data-gallery-column>
-					<img src="./assets/jpg/image1.jpg" alt="">
-					<img src="./assets/jpg/image2.jpg" alt="">
+					<img src="./assets/jpg/image1.jpg" alt="Website screenshot 1" loading="lazy">
+					<img src="./assets/jpg/image2.jpg" alt="Website screenshot 2" loading="lazy">
 				</div>
 					<div class="gallery-column" data-gallery-column>
-					<img src="./assets/jpg/image3.jpg" alt="">
-					<img src="./assets/jpg/image4.jpg" alt="">
+					<img src="./assets/jpg/image3.jpg" alt="Website screenshot 3" loading="lazy">
+					<img src="./assets/jpg/image4.jpg" alt="Website screenshot 4" loading="lazy">
 				</div>
 			</div>
-			<div class="arrow left-arrow" data-arrow="left">
+			<div class="arrow left-arrow" data-arrow="left" aria-label="Previous images">
 					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path d="M15.41 7.41L14 6L8 12L14 18L15.41 16.59L10.83 12L15.41 7.41Z" fill="white"/>
 					</svg>
 			</div>
-			<div class="arrow right-arrow" data-arrow="right">
+			<div class="arrow right-arrow" data-arrow="right" aria-label="Next images">
 					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path d="M8.59 16.59L10 18L16 12L10 6L8.59 7.41L13.17 12L8.59 16.59Z" fill="white"/>
 					</svg>
