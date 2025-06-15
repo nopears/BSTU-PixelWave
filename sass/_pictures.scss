@@ -41,7 +41,7 @@
     }
 
     @include mobile {
-      margin-bottom: 0.9375;
+      margin-bottom: 0.9375rem; 
     }
 
     a {
@@ -56,8 +56,9 @@
       color: $text;
       font-size: 1.75rem;
       font-weight: 600;
+      cursor: pointer; 
 
-      &:nth-child(2) {
+      &.active {
         background-color: $text;
         color: $dark-bg;
       }
@@ -95,47 +96,98 @@
     }
   }
 
+  .gallery-container {
+    position: relative; 
+    overflow: hidden; 
+    padding: 0 4rem;
+
+    &:hover .arrow {
+        opacity: 1;
+    }
+  }
+
+  .arrow {
+    position: absolute; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    width: 2.5rem; 
+    height: 2.5rem; 
+    background-color: rgba(0, 0, 0, 0.5); 
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+    svg {
+        width: 100%;
+        height: 100%;
+        path {
+            fill: white; 
+        }
+    }
+
+    &.left-arrow {
+      left: 1rem;
+    }
+
+    &.right-arrow {
+      right: 1rem; 
+    }
+  }
+
   .gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex; 
+    transition: transform 0.5s ease-in-out; 
     gap: 3.125rem;
+
+    &[hidden] {
+      display: none;
+    }
 
     @include laptop {
       gap: 0.8125rem;
     }
 
     @include tablet {
-      grid-template-columns: repeat(2, 1fr);
+      flex-wrap: nowrap; 
       gap: 3.125rem;
-
-      img:nth-child(5) {
-        display: none;
-
-      }
-
-      img:nth-child(6) {
-        display: none;
-      }
     }
 
     @include mobile {
-      grid-template-columns: 1fr;
-
-      img:nth-child(4) {
-        display: none;
-      }
-
-      img:nth-child(3) {
-        display: none;
-      }
-
-      img:nth-child(2) {
-        display: none;
-      }
+      flex-wrap: nowrap; 
     }
 
-    img {
-      width: 100%;
+    .gallery-column {
+      min-width: calc((100% - (2 * 3.125rem)) / 3); 
+      display: flex;
+      flex-direction: column;
+      gap: 3.125rem;
+      @include laptop {
+        gap: 0.8125rem;
+      }
+      @include tablet {
+        gap: 3.125rem;
+        min-width: calc((100% - 3.125rem) / 2); 
+        &:last-child {
+          display: none; 
+        }
+      }
+      @include mobile {
+        min-width: 100%; 
+        &:nth-last-child(2) {
+          display: none;
+        }
+        img:last-child {
+          display: none;
+        }
+      }
+      img {
+        width: 100%;
+      }
     }
   }
 }

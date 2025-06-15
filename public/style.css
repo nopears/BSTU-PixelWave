@@ -64,13 +64,6 @@ select {
   font: inherit;
 }
 
-/* Remove all animations and transitions for people that prefer not to see them */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation: none !important;
-    transition: none !important;
-  }
-}
 body {
   font-family: -apple-system, BlinkMacSystemFont, Lato, "Helvetica Neue", Arial, sans-serif;
 }
@@ -776,7 +769,7 @@ body {
 }
 @media (max-width: 576px) {
   .pictures .selector {
-    margin-bottom: 0.9375;
+    margin-bottom: 0.9375rem;
   }
 }
 .pictures .selector a {
@@ -791,8 +784,9 @@ body {
   color: #CBE4DE;
   font-size: 1.75rem;
   font-weight: 600;
+  cursor: pointer;
 }
-.pictures .selector a:nth-child(2) {
+.pictures .selector a.active {
   background-color: #CBE4DE;
   color: #2C3333;
 }
@@ -832,10 +826,50 @@ body {
     width: 5.25rem;
   }
 }
+.pictures .gallery-container {
+  position: relative;
+  overflow: hidden;
+  padding: 0 4rem;
+}
+.pictures .gallery-container:hover .arrow {
+  opacity: 1;
+}
+.pictures .arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.pictures .arrow svg {
+  width: 100%;
+  height: 100%;
+}
+.pictures .arrow svg path {
+  fill: white;
+}
+.pictures .arrow.left-arrow {
+  left: 1rem;
+}
+.pictures .arrow.right-arrow {
+  right: 1rem;
+}
 .pictures .gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  transition: transform 0.5s ease-in-out;
   gap: 3.125rem;
+}
+.pictures .gallery[hidden] {
+  display: none;
 }
 @media (max-width: 1024px) {
   .pictures .gallery {
@@ -844,31 +878,47 @@ body {
 }
 @media (max-width: 972px) {
   .pictures .gallery {
-    grid-template-columns: repeat(2, 1fr);
+    flex-wrap: nowrap;
     gap: 3.125rem;
-  }
-  .pictures .gallery img:nth-child(5) {
-    display: none;
-  }
-  .pictures .gallery img:nth-child(6) {
-    display: none;
   }
 }
 @media (max-width: 576px) {
   .pictures .gallery {
-    grid-template-columns: 1fr;
+    flex-wrap: nowrap;
   }
-  .pictures .gallery img:nth-child(4) {
-    display: none;
+}
+.pictures .gallery .gallery-column {
+  min-width: calc((100% - 6.25rem) / 3);
+  display: flex;
+  flex-direction: column;
+  gap: 3.125rem;
+}
+@media (max-width: 1024px) {
+  .pictures .gallery .gallery-column {
+    gap: 0.8125rem;
   }
-  .pictures .gallery img:nth-child(3) {
-    display: none;
+}
+@media (max-width: 972px) {
+  .pictures .gallery .gallery-column {
+    gap: 3.125rem;
+    min-width: calc((100% - 3.125rem) / 2);
   }
-  .pictures .gallery img:nth-child(2) {
+  .pictures .gallery .gallery-column:last-child {
     display: none;
   }
 }
-.pictures .gallery img {
+@media (max-width: 576px) {
+  .pictures .gallery .gallery-column {
+    min-width: 100%;
+  }
+  .pictures .gallery .gallery-column:nth-last-child(2) {
+    display: none;
+  }
+  .pictures .gallery .gallery-column img:last-child {
+    display: none;
+  }
+}
+.pictures .gallery .gallery-column img {
   width: 100%;
 }
 
