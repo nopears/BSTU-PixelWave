@@ -1,0 +1,18 @@
+@use "abstracts/variables" as *;
+@use "abstracts/mixins" as *;
+@use "abstracts/breakpoints" as *;
+
+.video {
+  @include section;
+
+  .title {
+    @include title;
+  }
+
+  .player {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+  }
+}

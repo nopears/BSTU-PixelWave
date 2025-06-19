@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PixelWave - Calculator</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+<div class="home">
+        <div class="content">
+            <header>
+                <div class="logo">
+                    <div class="title">PixelWave Studios</div>
+                    <div class="subtitle">Your digital artists</div>
+                </div>
+                <div class="links">
+                    <a href="./index.html#home">Home</a>
+                    <a href="./index.html#order">Contact Us</a>
+                    <a href="./calc.html">Calculator</a>
+                </div>
+                <label for="burger-checkbox" class="header__burger">
+                    <img src="./assets/svg/burger.svg" alt="" class="burger__icon">
+                </label>
+            </header>
+            <div class="vision">
+                <div class="vision_wrapper">
+                    <div class="title">
+                        Estimate Your Project Cost
+                    </div>
+                    <div class="subtitle">
+                        Use our calculator to get an approximate cost for your desired service.
+                    </div>
+                    <a href="#calculator" class="button">Calculate the price</a>
+                </div>
+            </div>
+        </div>
+        <div class="bg"></div>
+        <input type="checkbox" id="burger-checkbox" hidden>
+        <div class="burger__menu">
+            <div class="menu__header">
+                <label for="burger-checkbox" class="header__burger">
+                    <img src="./assets/svg/cross.svg" alt="" class="burger__icon">
+                </label>
+            </div>
+            <div class="menu__links">
+                <label for="burger-checkbox" class="links__item" onclick="location.href='./index.html#home';">
+                    Home
+                </label>
+                <label for="burger-checkbox" class="links__item" onclick="location.href='./index.html#order';">
+                    Contact Us
+                </label>
+                <label for="burger-checkbox" class="links__item" onclick="location.href='./calc.html';">
+                    Calculator
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="calculator-section" id="calculator">
+        <div class="title">Price Calculator</div>
+        <div class="calculator-wrapper">
+            <div class="input-group">
+                <label for="service-type">Select Service:</label>
+                <select id="service-type">
+                    <option value="maintenance">Maintenance</option>
+                    <option value="website">Website</option>
+                    <option value="seo">SEO Optimization</option>
+                </select>
+            </div>
+
+            <div class="input-group" id="website-sub-category-group" style="display: none;">
+                <label for="website-sub-category">Website Type:</label>
+                <select id="website-sub-category">
+                    <option value="business-card">Business Card Website ($600)</option>
+                    <option value="online-showcase">Online Showcase ($1200)</option>
+                    <option value="online-store">Online Store ($2000)</option>
+                    <option value="commercial-portal">Commercial Portal ($3500)</option>
+                </select>
+            </div>
+
+            <div class="input-group" id="seo-sub-category-group" style="display: none;">
+                <label for="seo-sub-category">SEO Package:</label>
+                <select id="seo-sub-category">
+                    <option value="basic-seo">Basic SEO ($300)</option>
+                    <option value="advanced-seo">Advanced SEO ($600)</option>
+                    <option value="comprehensive-seo">Comprehensive SEO ($900)</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="timeline">Select Timeline:</label>
+                <select id="timeline">
+                    <option value="standard">Standard</option>
+                    <option value="express">Express (+30%)</option>
+                    <option value="urgent">Urgent (+70%)</option>
+                </select>
+            </div>
+
+            <div class="result">
+                <h3>Estimated Price:</h3>
+                <p id="estimated-price">$0</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="name">
+            <p>Григорий Жилич</p>
+            <p>@nopears</p>
+        </div>
+        <div class="contacts">
+            <a href="tel:+375298368653">+375(29)836-86-53</a>
+            <a href="mailto:gregorzhilich@icloud.com">gregorzhilich@icloud.com</a>
+        </div>
+        <div class="links">
+            <a href="https://www.figma.com/files/team/1047797165927698395/user/1047797158984635864?fuid=1047797158984635864">
+                <img src="./assets/svg/figma.svg" alt="">
+            </a>
+            <a href="https://github.com/nopears">
+                <img src="./assets/svg/github.svg" alt="">
+            </a>
+        </div>
+    </footer>
+    <script src="./script.js"></script>
+<body>
+    
+</body>
+
+</html>
