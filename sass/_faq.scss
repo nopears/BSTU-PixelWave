@@ -1,0 +1,52 @@
+@use "abstracts/variables" as *;
+@use "abstracts/mixins" as *;
+@use "abstracts/breakpoints" as *;
+
+.faq {
+  @include section;
+
+  .title {
+    @include title;
+  }
+
+  .qas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include custom(620) {
+      grid-template-columns: 1fr;
+    }
+
+    .qa {
+      height: 16rem;
+      border: 0.0625rem solid $cyan;
+      color: $text;
+      padding: 0.75rem;
+      border-radius: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      @include mobile {
+        height: 14.5rem;
+      }
+
+      .qa_title {
+        font-size: 1.9rem;
+
+        @include tablet {
+          font-size: 1.3rem;
+        }
+
+        @include custom(620px) {
+          font-size: 1.15rem;
+        }
+      }
+    }
+  }
+}

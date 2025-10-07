@@ -1,0 +1,11 @@
+@use "abstracts/variables" as *;
+@use "abstracts/mixins" as *;
+@use "abstracts/breakpoints" as *;
+
+.map {
+  @include section;
+
+  .title {
+    @include title;
+  }
+}
